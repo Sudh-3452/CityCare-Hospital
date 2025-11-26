@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hospital Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Top Navbar -->
+  <header class="navbar">
+    <div class="logo">CityCare Hospital</div>
+    <nav>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#patients">Patients</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#appointments">Appointments</a>
+    </nav>
+  </header>
+
+  <!-- Main Layout -->
+  <main class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Menu</h3>
+      
+      <ul>
+        <li><button onclick="showSection('dashboard')">Dashboard</button></li>
+        <li><button onclick="showSection('patients')">Patients</button></li>
+        <li><button onclick="showSection('doctors')">Doctors</button></li>
+        <li><button onclick="showSection('appointments')">Appointments</button></li>
+      </ul>
+    </aside>
+
+    <!-- Content Area -->
+    <section class="content">
+      <!-- Dashboard -->
+      <section id="dashboard" class="page active">
+        <h2>Dashboard</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Total Patients</h3>
+            <p id="totalPatients">0</p>
+          </div>
+          <div class="card">
+            <h3>Total Doctors</h3>
+            <p id="totalDoctors">0</p>
+          </div>
+          <div class="card">
+            <h3>Today's Appointments</h3>
+            <p id="totalAppointments">0</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Patients -->
+      <section id="patients" class="page">
+        <h2>Patients</h2>
+        <form id="patientForm" class="form">
+          <input type="text" id="patientName" placeholder="Patient Name" required>
+          <input type="number" id="patientAge" placeholder="Age" required>
+          <input type="text" id="patientDisease" placeholder="Disease" required>
+          <button type="submit">Add Patient</button>
+        </form>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Disease</th>
+            </tr>
+          </thead>
+          <tbody id="patientTableBody"></tbody>
+        </table>
+      </section>
+
+      <!-- Doctors -->
+      <section id="doctors" class="page">
+        <h2>Doctors</h2>
+        <form id="doctorForm" class="form">
+          <input type="text" id="doctorName" placeholder="Doctor Name" required>
+          <input type="text" id="doctorSpeciality" placeholder="Speciality" required>
+          <button type="submit">Add Doctor</button>
+        </form>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Speciality</th>
+            </tr>
+          </thead>
+          <tbody id="doctorTableBody"></tbody>
+        </table>
+      </section>
+
+      <!-- Appointments -->
+      <section id="appointments" class="page">
+        <h2>Appointments</h2>
+        <form id="appointmentForm" class="form">
+          <input type="text" id="appointmentPatient" placeholder="Patient Name" required>
+          <input type="text" id="appointmentDoctor" placeholder="Doctor Name" required>
+          <input type="date" id="appointmentDate" required>
+          <input type="time" id="appointmentTime" required>
+          <button type="submit">Book Appointment</button>
+        </form>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Patient</th>
+              <th>Doctor</th>
+              <th>Date</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody id="appointmentTableBody"></tbody>
+        </table>
+      </section>
+    </section>
+  </main>
+
+
+  <!-- Chatbox -->
+  <div class="chatbox-outer">
+    <button class="chat-toggle" onclick="toggleChat()">Chat</button>
+    <div class="chatbox" id="chatbox">
+      <div class="chat-header">
+        <span>Support Chat</span>
+        <button onclick="toggleChat()">✕</button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="message bot">Hi, I am Chetna , your AI Assistanse ?</div>
+        <div class="message bot"> How can we help you today?</div>
+      </div>
+      <form id="chatForm" class="chat-input">
+        <input type="text" id="chatInput" placeholder="Type your message..." required>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
