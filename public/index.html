@@ -1,145 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hospital Management System</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CityCare Hospital</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
 </head>
+
 <body>
-  <!-- Top Navbar -->
-  <header class="navbar">
-    <div class="logo">CityCare Hospital</div>
-    <nav>
-      <a href="#dashboard">Dashboard</a>
-      <a href="#patients">Patients</a>
-      <a href="#doctors">Doctors</a>
-      <a href="#appointments">Appointments</a>
-    </nav>
-  </header>
 
-  <!-- Main Layout -->
-  <main class="container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <h3>Menu</h3>
-      
-      <ul>
-        <li><button onclick="showSection('dashboard')">Dashboard</button></li>
-        <li><button onclick="showSection('patients')">Patients</button></li>
-        <li><button onclick="showSection('doctors')">Doctors</button></li>
-        <li><button onclick="showSection('appointments')">Appointments</button></li>
-      </ul>
-    </aside>
+<header>
+<h2>CityCare Hospital</h2>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#doctors">Doctors</a>
+<a href="#services">Services</a>
+<a href="#appointment">Appointment</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
 
-    <!-- Content Area -->
-    <section class="content">
-      <!-- Dashboard -->
-      <section id="dashboard" class="page active">
-        <h2>Dashboard</h2>
-        <div class="cards">
-          <div class="card">
-            <h3>Total Patients</h3>
-            <p id="totalPatients">0</p>
-          </div>
-          <div class="card">
-            <h3>Total Doctors</h3>
-            <p id="totalDoctors">0</p>
-          </div>
-          <div class="card">
-            <h3>Today's Appointments</h3>
-            <p id="totalAppointments">0</p>
-          </div>
-        </div>
-      </section>
+<!-- HERO -->
+<section class="hero" id="home">
+<h1>Your Health, Our Priority</h1>
+<p>24/7 Emergency Care</p>
+<div>
+<button class="btn" onclick="scrollToSection('appointment')">Book Appointment</button>
+<button class="btn" onclick="callEmergency()">Emergency Call</button>
+</div>
+</section>
 
-      <!-- Patients -->
-      <section id="patients" class="page">
-        <h2>Patients</h2>
-        <form id="patientForm" class="form">
-          <input type="text" id="patientName" placeholder="Patient Name" required>
-          <input type="number" id="patientAge" placeholder="Age" required>
-          <input type="text" id="patientDisease" placeholder="Disease" required>
-          <button type="submit">Add Patient</button>
-        </form>
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Age</th>
-              <th>Disease</th>
-            </tr>
-          </thead>
-          <tbody id="patientTableBody"></tbody>
-        </table>
-      </section>
+<!-- ABOUT -->
+<section id="about">
+<h2>About Us</h2>
+<p style="text-align:center;max-width:800px;margin:auto">CityCare Hospital is a trusted and modern healthcare center dedicated to providing high-quality medical services with compassion and care. We combine advanced medical technology with experienced doctors to ensure accurate diagnosis and effective treatment for every patient.<br>
+Our hospital offers a wide range of services including cardiology, neurology, orthopedics, and pediatric care, all under one roof. With a patient-first approach, we focus on safety, comfort, and personalized treatment plans.<br>
+We are committed to making healthcare affordable, accessible, and reliable for everyone, while maintaining the highest standards of medical excellence.</p>
 
-      <!-- Doctors -->
-      <section id="doctors" class="page">
-        <h2>Doctors</h2>
-        <form id="doctorForm" class="form">
-          <input type="text" id="doctorName" placeholder="Doctor Name" required>
-          <input type="text" id="doctorSpeciality" placeholder="Speciality" required>
-          <button type="submit">Add Doctor</button>
-        </form>
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Speciality</th>
-            </tr>
-          </thead>
-          <tbody id="doctorTableBody"></tbody>
-        </table>
-      </section>
+<h3 style="text-align:center;margin-top:20px">Vision</h3>
+<p style="text-align:center">Our vision is to become a leading and most trusted healthcare provider, recognized for excellence in medical services, advanced technology, and compassionate patient care. We aim to create a healthier community by delivering accessible, affordable, and high-quality healthcare to all.</p>
+<h3 style="text-align:center">Mission</h3>
+<p style="text-align:center">Our mission is to provide high-quality, patient-centered healthcare services with compassion, integrity, and excellence. We are committed to using advanced medical technology, skilled professionals, and ethical practices to ensure the best possible outcomes for our patients.
 
-      <!-- Appointments -->
-      <section id="appointments" class="page">
-        <h2>Appointments</h2>
-        <form id="appointmentForm" class="form">
-          <input type="text" id="appointmentPatient" placeholder="Patient Name" required>
-          <input type="text" id="appointmentDoctor" placeholder="Doctor Name" required>
-          <input type="date" id="appointmentDate" required>
-          <input type="time" id="appointmentTime" required>
-          <button type="submit">Book Appointment</button>
-        </form>
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Patient</th>
-              <th>Doctor</th>
-              <th>Date</th>
-              <th>Time</th>
-            </tr>
-          </thead>
-          <tbody id="appointmentTableBody"></tbody>
-        </table>
-      </section>
-    </section>
-  </main>
+We strive to make healthcare accessible, affordable, and reliable for every individual in our community.</p>
+</section>
 
+<!-- DOCTORS -->
+<section id="doctors">
+<h2>Our Doctors</h2>
+<div class="cards">
+<div class="card">
+<h3>Dr. Sharma</h3>
+<p>Cardiologist</p>
+<p>10+ Years Experience</p>
+<p>Available: Mon-Sat</p>
+<button class="btn" onclick="scrollToSection('appointment')">Book</button>
+</div>
+<div class="card">
+<h3>Dr. Verma</h3>
+<p>Neurologist</p>
+<p>8+ Years Experience</p>
+<p>Available: Tue-Sun</p>
+<button class="btn" onclick="scrollToSection('appointment')">Book</button>
+</div>
+</div>
+</section>
 
-  <!-- Chatbox -->
-  <div class="chatbox-outer">
-    <button class="chat-toggle" onclick="toggleChat()">Chat</button>
-    <div class="chatbox" id="chatbox">
-      <div class="chat-header">
-        <span>Support Chat</span>
-        <button onclick="toggleChat()">✕</button>
-      </div>
-      <div class="chat-messages" id="chatMessages">
-        <div class="message bot">Hi, I am Chetna , your AI Assistanse ?</div>
-        <div class="message bot"> How can we help you today?</div>
-      </div>
-      <form id="chatForm" class="chat-input">
-        <input type="text" id="chatInput" placeholder="Type your message..." required>
-        <button type="submit">Send</button>
-      </form>
-    </div>
-  </div>
+<!-- SERVICES -->
+<section id="services">
+<h2>Services</h2>
+<div class="cards">
+<div class="card">❤️ Cardiology - Heart care and treatment</div>
+<div class="card">🧠 Neurology - Brain and nerve care</div>
+<div class="card">🦴 Orthopedics - Bone and joint care</div>
+<div class="card">👶 Pediatrics - Child healthcare</div>
+</div>
+</section>
 
-  <script src="script.js"></script>
+<!-- APPOINTMENT -->
+<section id="appointment">
+<h2>Book Appointment</h2>
+<form id="appointmentForm">
+<input type="text" id="name" placeholder="Full Name" required>
+<input type="tel" id="phone" placeholder="Phone Number" required>
+<select id="doctor" required>
+<option value="">Select Doctor</option>
+<option>Dr. Sharma</option>
+<option>Dr. Verma</option>
+</select>
+<input type="date" id="date" required>
+<input type="time" id="time" required>
+<button class="btn">Submit</button>
+</form>
+<p id="msg"></p>
+</section>
+
+<!-- GALLERY -->
+<section>
+<h2>Gallery</h2>
+<div class="cards">
+<img src="https://plus.unsplash.com/premium_photo-1672760403439-bf51a26c1ae6?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+<img src="https://media.istockphoto.com/id/1680653991/photo/a-female-doctor-conducting-a-thorough-examination-of-a-child-during-a-rural-health-care-camp.webp?a=1&b=1&s=612x612&w=0&k=20&c=NPOrOqcGjKGLeneuvpSwp3Od77JwY9N2qMVZ7Qfztts=">
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact Us</h2>
+<p style="text-align:center">📍 Delhi, India</p>
+<p style="text-align:center">📞 +91 9876543210</p>
+<p style="text-align:center">✉️ care@hospital.com</p>
+<iframe src="https://maps.google.com/maps?q=delhi&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="300" style="border:0;margin-top:20px"></iframe>
+</section>
+
+<footer>
+<p>© 2026 CityCare Hospital | All Rights Reserved Developer: Sudhanshu Sharma</p>
+</footer>
+
 </body>
 </html>
