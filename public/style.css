@@ -1,246 +1,191 @@
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
+/* BODY */
 body {
-  background: #f5f7fb;
-  color: #222;
+  background: #f4f9fb;
+  color: #333;
+  line-height: 1.6;
 }
 
-/* Navbar */
-.navbar {
-  background: #1e3a8a;
-  color: #fff;
-  padding: 10px 20px;
+/* HEADER */
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 8%;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.navbar .logo {
-  font-weight: bold;
-  font-size: 20px;
+header h2 {
+  color: #0077b6;
 }
 
-.navbar nav a {
-  color: #fff;
-  margin-left: 15px;
+nav a {
+  margin: 0 15px;
   text-decoration: none;
-  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-.navbar nav a:hover {
-  text-decoration: underline;
+nav a:hover {
+  color: #0077b6;
 }
 
-/* Layout */
-.container {
+/* HERO */
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0,119,182,0.7), rgba(0,119,182,0.7)),
+              url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3');
+  background-size: cover;
+  background-position: center;
+  color: white;
   display: flex;
-  min-height: calc(100vh - 50px);
-}
-
-/* Sidebar */
-.sidebar {
-  width: 200px;
-  background: #111827;
-  color: #fff;
-  padding: 20px;
-}
-
-.sidebar h3 {
-  margin-bottom: 10px;
-}
-
-.sidebar ul {
-  list-style: none;
-}
-
-.sidebar li {
-  margin-bottom: 10px;
-}
-
-.sidebar button {
-  width: 100%;
-  padding: 8px 10px;
-  border: none;
-  background: #1f2937;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 4px;
-  text-align: left;
-}
-
-.sidebar button:hover {
-  background: #374151;
-}
-
-/* Content */
-.content {
-  flex: 1;
-  padding: 20px;
-}
-
-.page {
-  display: none;
-}
-
-.page.active {
-  display: block;
-}
-
-.cards {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.card {
-  background: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  width: 200px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-/* Forms */
-.form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-.form input,
-.form button {
-  padding: 8px 10px;
-  border-radius: 4px;
-  border: 1px solid #d1d5db;
-}
-
-.form button {
-  background: #2563eb;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
-.form button:hover {
-  background: #1d4ed8;
-}
-
-/* Tables */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #fff;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-th, td {
-  padding: 8px 10px;
-  border-bottom: 1px solid #e5e7eb;
-  font-size: 14px;
-}
-
-th {
-  background: #f3f4f6;
-  text-align: left;
-}
-
-/* Chatbox */
-.chatbox-outer {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-}
-
-.chat-toggle {
-  background: #2563eb;
-  color: #fff;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 999px;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.chatbox {
-  width: 280px;
-  height: 350px;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
-  border-radius: 10px;
-  margin-top: 10px;
-  display: none;
   flex-direction: column;
-}
-
-.chat-header {
-  background: #1e3a8a;
-  color: #fff;
-  padding: 8px 10px;
-  display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  border-radius: 10px 10px 0 0;
+  text-align: center;
 }
 
-.chat-header button {
-  background: transparent;
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* BUTTON */
+.btn {
+  padding: 12px 25px;
   border: none;
-  color: #fff;
+  background: #00b4d8;
+  color: white;
+  border-radius: 30px;
   cursor: pointer;
+  transition: 0.3s;
+  margin: 5px;
+  font-weight: 500;
 }
 
-.chat-messages {
-  flex: 1;
-  padding: 10px;
-  overflow-y: auto;
-  font-size: 14px;
+.btn:hover {
+  background: #0077b6;
+  transform: translateY(-2px);
 }
 
-.message {
-  padding: 6px 8px;
-  border-radius: 6px;
-  margin-bottom: 5px;
-  max-width: 80%;
+/* SECTION */
+section {
+  padding: 70px 8%;
 }
 
-.message.bot {
-  background: #e5e7eb;
-  align-self: flex-start;
+section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #0077b6;
 }
 
-.message.user {
-  background: #2563eb;
-  color: #fff;
-  align-self: flex-end;
-  margin-left: auto;
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
 }
 
-.chat-input {
-  padding: 8px;
-  border-top: 1px solid #e5e7eb;
-  display: flex;
-  gap: 5px;
+/* CARD STYLE */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: 0.3s;
 }
 
-.chat-input input {
-  flex: 1;
-  border-radius: 999px;
-  border: 1px solid #d1d5db;
-  padding: 6px 10px;
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-.chat-input button {
-  padding: 6px 12px;
-  border-radius: 999px;
-  border: none;
-  background: #2563eb;
-  color: #fff;
-  cursor: pointer;
+/* DOCTOR IMAGE (OPTIONAL ADD) */
+.card img {
+  width: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* FORM */
+form {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #0077b6;
+}
+
+/* GALLERY */
+.cards img {
+  width: 100%;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.cards img:hover {
+  transform: scale(1.05);
+}
+
+/* CONTACT */
+#contact p {
+  text-align: center;
+  margin: 5px 0;
+}
+
+/* FOOTER */
+footer {
+  background: #0077b6;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  nav {
+    display: none; /* can add hamburger later */
+  }
 }
